@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Icons/lock-color</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/lock" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M6,9 L6,6 C6,2.6862915 8.6862915,1.42108547e-15 12,8.8817842e-16 C15.3137085,-1.77635684e-16 18,2.6862915 18,6 L18,9 L19,9 C20.6568542,9 22,10.3431458 22,12 L22,19 C22,20.6568542 20.6568542,22 19,22 L5,22 C3.34314575,22 2,20.6568542 2,19 L2,12 C2,10.3431458 3.34314575,9 5,9 L6,9 Z M8,9 L16,9 L16,6 C16,3.790861 14.209139,2 12,2 C9.790861,2 8,3.790861 8,6 L8,9 Z M5,11 C4.44771525,11 4,11.4477153 4,12 L4,19 C4,19.5522847 4.44771525,20 5,20 L19,20 C19.5522847,20 20,19.5522847 20,19 L20,12 C20,11.4477153 19.5522847,11 19,11 L5,11 Z" id="icon" fill="#FF6852"></path>
+    </g>
+</svg>
