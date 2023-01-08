@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function Navigation(props) {
   return (
@@ -12,29 +13,23 @@ function Navigation(props) {
       role="banner"
       className="nav-bar w-nav"
     >
-      <a
-        href="index.html"
-        aria-current="page"
-        className="nav-brand w-nav-brand w--current"
-      >
-        <img
-          src="images/Untitled-design-27.png"
-          loading="lazy"
-          width="138"
-          // sizes="(max-width: 767px) 137.98611450195312px, (max-width: 991px) 18vw, (max-width: 1919px) 7vw, 137.98611450195312px"
-          // srcset="images/Untitled-design-27-p-500.png 500w, images/Untitled-design-27.png 770w"
-          alt=""
-          className="text-logo"
-        />
-      </a>
-      <nav role="navigation" className="nav-menu w-nav-menu">
-        <a
-          href="index.html"
-          aria-current="page"
-          className="nav-link grey w-nav-link w--current"
-        >
-          Home
+      <Link href="/" aria-current="page">
+        <a className="nav-brand w-nav-brand w--current">
+          <img
+            src="images/Untitled-design-27.png"
+            loading="lazy"
+            width="138"
+            // sizes="(max-width: 767px) 137.98611450195312px, (max-width: 991px) 18vw, (max-width: 1919px) 7vw, 137.98611450195312px"
+            // srcset="images/Untitled-design-27-p-500.png 500w, images/Untitled-design-27.png 770w"
+            alt=""
+            className="text-logo"
+          />
         </a>
+      </Link>
+      <nav role="navigation" className="nav-menu w-nav-menu">
+        <Link href="/" aria-current="page">
+          <a className="nav-link grey w-nav-link w--current">Home</a>
+        </Link>
         <div
           data-hover="true"
           data-delay="400"
@@ -87,12 +82,12 @@ function Navigation(props) {
             </div>
           </nav>
         </div>
-        <a href="blog.html" className="nav-link grey w-nav-link">
-          Blog
-        </a>
-        <a href="about.html" className="nav-link grey w-nav-link">
-          About
-        </a>
+        <Link href="/blog" className="nav-link grey w-nav-link">
+          <a className="nav-link grey w-nav-link">Blog</a>
+        </Link>
+        <Link href="/about" className="nav-link grey w-nav-link">
+          <a className="nav-link grey w-nav-link">About</a>
+        </Link>
         <a href="contact.html" className="nav-link grey w-nav-link">
           Contact
         </a>

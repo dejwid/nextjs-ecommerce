@@ -1,7 +1,7 @@
 import Footer from "./Footer";
 import { useContext, useEffect, useState } from "react";
 import { ProductsContext } from "./ProductsContext";
-import FooterNew from "./FooterNew";
+import FooterNew from "./LayoutComponents/FooterNew";
 
 export default function Layout({ children }) {
   const { setSelectedProducts } = useContext(ProductsContext);

@@ -1,6 +1,5 @@
 import React from "react";
-import ProductCardHome from "./ProductCardHome";
-import ProductQuickView from "./ProductQuickView";
+import ProductCardHome from "./ProductCard/ProductCardHome";
 
 function BestSellersHome(props) {
   return (

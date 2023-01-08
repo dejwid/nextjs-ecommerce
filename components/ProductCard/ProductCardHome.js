@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import ProductQuickView from "./ProductQuickView";
 
 function ProductCardHome(props) {
@@ -32,18 +33,20 @@ function ProductCardHome(props) {
     >
       <div data-w-id={props.product.id} className="product-card">
         <div className="product-card-image-wrapper">
-          <a
-            data-w-id={props.product.id}
-            href="#"
-            className="product-card-image-link w-inline-block"
-          >
-            <img
-              style={{ opacity: 1 }}
-              src={props.product.image}
-              alt=""
-              className="product-card-image"
-            />
-          </a>
+          <Link href="/products/[href]" as={`/products/${props.product.href}`}>
+            <a
+              data-w-id={props.product.id}
+              href="#"
+              className="product-card-image-link w-inline-block"
+            >
+              <img
+                style={{ opacity: 1 }}
+                src={props.product.image}
+                alt=""
+                className="product-card-image"
+              />
+            </a>
+          </Link>
           {props.product.onSale ? (
             <div className="badge product-card-sale"></div>
           ) : null}

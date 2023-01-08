@@ -7,15 +7,12 @@ function Hero(props) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handlePrevClick = () => {
-    console.log("prev");
     setCurrentSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
   };
 
   const handleNextClick = () => {
-    console.log("next");
     setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
   };
-  console.log(currentSlide);
 
   const slides = [<SlideOne />, <SlideTwo />, <SlideThree />];
   return (

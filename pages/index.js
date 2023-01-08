@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import Product from "../components/Product";
+import Product from "../components/ProductCard/Product";
 import { initMongoose } from "../lib/mongoose";
 import { findAllProducts } from "./api/products";
 import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import Navigation from "../components/Navigation/Navigation";
-import PopUpSubscribe from "../components/PopUpSubscribe";
+import PopUpSubscribe from "../components/LayoutComponents/PopUpSubscribe";
 import Hero from "../components/Hero/Hero";
 import CategoriesHome from "../components/CategoriesHome";
 import BestSellersHome from "../components/BestSellersHome";
 import PromoHome from "../components/PromoHome";
 import SubscribeSectionHome from "../components/SubscribeSectionHome";
 import LatestPostsHome from "../components/LatestPostsHome";
-import InstagramSection from "../components/InstagramSection";
+import InstagramSection from "../components/LayoutComponents/InstagramSection";
 import productsJson from "../data/products.json";
 
 export default function Home({ products }) {

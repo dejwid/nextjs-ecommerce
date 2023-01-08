@@ -1,7 +1,6 @@
 import React from "react";
 
 function ProductQuickView(props) {
-  console.log(props);
   return (
     <div
       style={!props.show ? { display: "none" } : null}
