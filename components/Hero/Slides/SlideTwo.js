@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function SlideTwo(props) {
   return (
@@ -21,23 +22,24 @@ function SlideTwo(props) {
               className="slide-info"
             >
               <h1 className="hero-heading">Necklaces</h1>
-              <a
-                href="shop.html"
-                data-w-id="91d85e29-b769-f046-af88-0db7c8035e6e"
-                className="button ghost w-inline-block"
-              >
-                <div
-                  style={{ width: "0px" }}
-                  className="button-icon-wrapper w-clearfix"
+              <Link href="/shop">
+                <a
+                  data-w-id="91d85e29-b769-f046-af88-0db7c8035e6e"
+                  className="button ghost w-inline-block"
                 >
-                  <img
-                    src="images/cart-white.svg"
-                    alt=""
-                    className="button-icon left"
-                  />
-                </div>
-                <div>Shop Now</div>
-              </a>
+                  <div
+                    style={{ width: "0px" }}
+                    className="button-icon-wrapper w-clearfix"
+                  >
+                    <img
+                      src="images/cart-white.svg"
+                      alt=""
+                      className="button-icon left"
+                    />
+                  </div>
+                  <div>Shop Now</div>
+                </a>
+              </Link>
             </div>
             <div className="slide-media"></div>
           </div>

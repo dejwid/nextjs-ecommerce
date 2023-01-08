@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import ProductCardHome from "./ProductCard/ProductCardHome";
 
 function BestSellersHome(props) {
@@ -34,13 +35,14 @@ function BestSellersHome(props) {
           </div>
         </div>
         <div className="flex-center">
-          <a
-            href="shop.html"
-            data-w-id="b2ff4c67-07c8-1b5f-6577-e568e9a4fd49"
-            className="button green-shost w-inline-block"
-          >
-            <div>All Products</div>
-          </a>
+          <Link href="/shop">
+            <a
+              data-w-id="b2ff4c67-07c8-1b5f-6577-e568e9a4fd49"
+              className="button green-shost w-inline-block"
+            >
+              <div>All Products</div>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

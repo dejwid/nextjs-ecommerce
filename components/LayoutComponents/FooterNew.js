@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function FooterNew() {
   return (
@@ -7,9 +8,9 @@ function FooterNew() {
         <div className="footer _5-col _4-col">
           <div className="col footer-col">
             <h6 className="footer-heading">Shop</h6>
-            <a href="shop.html" className="footer-link">
-              All Products
-            </a>
+            <Link href="/shop">
+              <a className="footer-link">All Products</a>
+            </Link>
             <div className="w-dyn-list">
               <div role="list" className="w-dyn-items">
                 <div role="listitem" className="w-dyn-item">
@@ -23,28 +24,32 @@ function FooterNew() {
           </div>
           <div className="col footer-col">
             <h6 className="footer-heading">Explore</h6>
-            <a
-              href="index.html"
-              aria-current="page"
-              className="footer-link w--current"
-            >
-              Home
-            </a>
+            <Link href="/">
+              <a
+                href="index.html"
+                aria-current="page"
+                className="footer-link w--current"
+              >
+                Home
+              </a>
+            </Link>
             <a href="blog.html" className="footer-link hide">
               Blog
             </a>
-            <a href="shop.html" className="footer-link">
-              Shop
-            </a>
+            <Link href="/shop">
+              <a className="footer-link">Shop</a>
+            </Link>
             <a href="stone-type.html" className="footer-link">
               Stones
             </a>
             <a href="blog.html" className="footer-link">
               Blog
             </a>
-            <a href="about.html" className="footer-link">
-              About
-            </a>
+            <Link href="/shop">
+              <a href="about.html" className="footer-link">
+                About
+              </a>
+            </Link>
             <a href="faq.html" className="footer-link">
               FAQ
             </a>

@@ -38,12 +38,14 @@ function Navigation(props) {
         >
           <div className="nav-link nav-dropdown grey w-dropdown-toggle">
             <div className="nav-dropdown-icon w-icon-dropdown-toggle"></div>
-            <div>Shop</div>
+            <Link href="/shop">
+              <div>Shop</div>
+            </Link>
           </div>
           <nav className="dropdown-list w-dropdown-list">
-            <a href="shop.html" className="dropdown-link w-dropdown-link">
-              All Items
-            </a>
+            <Link href="/shop">
+              <a className="dropdown-link w-dropdown-link">All Items</a>
+            </Link>
             <div className="w-dyn-list">
               <div role="list" className="w-dyn-items">
                 <div role="listitem" className="w-dyn-item">
@@ -64,12 +66,14 @@ function Navigation(props) {
         >
           <div className="nav-link nav-dropdown grey w-dropdown-toggle">
             <div className="nav-dropdown-icon w-icon-dropdown-toggle"></div>
-            <div>Stones</div>
+            <Link href="/stone-type">
+              <div>Stones</div>
+            </Link>
           </div>
           <nav className="dropdown-list w-dropdown-list">
-            <a href="stone-type.html" className="dropdown-link w-dropdown-link">
-              All Stones
-            </a>
+            <Link href="/stone-type">
+              <a className="dropdown-link w-dropdown-link">All Stones</a>
+            </Link>
             <div className="w-dyn-list">
               <div role="list" className="w-dyn-items">
                 <div role="listitem" className="w-dyn-item">
@@ -88,9 +92,11 @@ function Navigation(props) {
         <Link href="/about" className="nav-link grey w-nav-link">
           <a className="nav-link grey w-nav-link">About</a>
         </Link>
-        <a href="contact.html" className="nav-link grey w-nav-link">
-          Contact
-        </a>
+        <Link href="/contact">
+          <a href="contact.html" className="nav-link grey w-nav-link">
+            Contact
+          </a>
+        </Link>
         <div className="nav-menu-small">
           <a
             href="#"
@@ -171,9 +177,9 @@ function Navigation(props) {
                   <div className="cart-empty-text">
                     There is no items in your cart yet
                   </div>
-                  <a href="shop.html" className="button w-button">
-                    Start Shopping
-                  </a>
+                  <Link href="/shop">
+                    <a className="button w-button">Start Shopping</a>
+                  </Link>
                 </div>
                 <div
                   style={{ display: "none" }}

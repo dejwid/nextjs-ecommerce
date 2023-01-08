@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function SlideOne(props) {
   return (
@@ -28,23 +29,24 @@ function SlideOne(props) {
                 stones and essential oils. Our products are not only beautiful
                 but beneficial for overall wellness.
               </p>
-              <a
-                href="shop.html"
-                data-w-id="4ce83920-f517-5cce-646e-b776435b1d83"
-                className="button ghost w-inline-block"
-              >
-                <div
-                  style={{ width: "0px" }}
-                  className="button-icon-wrapper w-clearfix"
+              <Link href="/shop">
+                <a
+                  data-w-id="4ce83920-f517-5cce-646e-b776435b1d83"
+                  className="button ghost w-inline-block"
                 >
-                  <img
-                    src="images/cart-white.svg"
-                    alt=""
-                    className="button-icon left"
-                  />
-                </div>
-                <div>Shop Now</div>
-              </a>
+                  <div
+                    style={{ width: "0px" }}
+                    className="button-icon-wrapper w-clearfix"
+                  >
+                    <img
+                      src="images/cart-white.svg"
+                      alt=""
+                      className="button-icon left"
+                    />
+                  </div>
+                  <div>Shop Now</div>
+                </a>
+              </Link>
             </div>
             <div className="slide-media"></div>
           </div>

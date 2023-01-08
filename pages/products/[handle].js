@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import products from "../../data/products.json";
 import Navigation from "../../components/Navigation/Navigation";

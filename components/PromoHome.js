@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function PromoHome() {
   return (
@@ -14,23 +15,24 @@ function PromoHome() {
               A touch of <span className="text-color">natural magic</span> to
               accessorize your style.
             </h2>
-            <a
-              href="shop.html"
-              data-w-id="80b2d673-b942-0c57-e83a-3b335665aad9"
-              className="button ghost w-inline-block"
-            >
-              <div
-                style={{ widoth: "0px" }}
-                className="button-icon-wrapper w-clearfix"
+            <Link href="/shop">
+              <a
+                data-w-id="80b2d673-b942-0c57-e83a-3b335665aad9"
+                className="button ghost w-inline-block"
               >
-                <img
-                  src="images/cart-white.svg"
-                  alt=""
-                  className="button-icon left"
-                />
-              </div>
-              <div>Shop Now</div>
-            </a>
+                <div
+                  style={{ widoth: "0px" }}
+                  className="button-icon-wrapper w-clearfix"
+                >
+                  <img
+                    src="images/cart-white.svg"
+                    alt=""
+                    className="button-icon left"
+                  />
+                </div>
+                <div>Shop Now</div>
+              </a>
+            </Link>
           </div>
         </div>
       </div>

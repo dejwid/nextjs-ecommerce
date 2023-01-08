@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function SlideThree(props) {
   return (
@@ -24,23 +25,24 @@ function SlideThree(props) {
                 <span className="text-color">Hand Made</span> Essential Oils
               </div>
               <h1 className="hero-heading">Essential Oils</h1>
-              <a
-                href="shop.html"
-                data-w-id="755842d1-0059-68b2-7832-70b6995dea32"
-                className="button ghost w-inline-block"
-              >
-                <div
-                  style={{ width: "0px" }}
-                  className="button-icon-wrapper w-clearfix"
+              <Link href="/shop">
+                <a
+                  data-w-id="755842d1-0059-68b2-7832-70b6995dea32"
+                  className="button ghost w-inline-block"
                 >
-                  <img
-                    src="images/cart-white.svg"
-                    alt=""
-                    className="button-icon left"
-                  />
-                </div>
-                <div>Shop Now</div>
-              </a>
+                  <div
+                    style={{ width: "0px" }}
+                    className="button-icon-wrapper w-clearfix"
+                  >
+                    <img
+                      src="images/cart-white.svg"
+                      alt=""
+                      className="button-icon left"
+                    />
+                  </div>
+                  <div>Shop Now</div>
+                </a>
+              </Link>
             </div>
             <div className="slide-media"></div>
           </div>

@@ -30,6 +30,11 @@ function ProductCardHome(props) {
       key={props.product.id}
       role="listitem"
       className="product-item w-dyn-item"
+      style={
+        props.setWidth && props.setWidth
+          ? { width: props.setWidth }
+          : { width: "25%" }
+      }
     >
       <div data-w-id={props.product.id} className="product-card">
         <div className="product-card-image-wrapper">
