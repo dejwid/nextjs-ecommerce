@@ -325,13 +325,15 @@ const ProductPage = ({ product }) => {
             </div>
           </div>
           <div className="flex-center">
-            <a
-              href="shop.html"
-              data-w-id="ec60f7dc-9af4-0f54-4a05-cc97f5576fd5"
-              className="button green-shost w-inline-block"
-            >
-              <div>See All Products</div>
-            </a>
+            <Link href={`/shop`}>
+              <a
+                href="shop.html"
+                data-w-id="ec60f7dc-9af4-0f54-4a05-cc97f5576fd5"
+                className="button green-shost w-inline-block"
+              >
+                <div>See All Products</div>
+              </a>
+            </Link>
           </div>
         </div>
       </div>

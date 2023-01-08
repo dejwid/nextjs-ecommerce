@@ -20,7 +20,7 @@
 .DS_Store
 .idea
 *.pem
-/data/products.json
+/data
 
 # debug
 npm-debug.log*

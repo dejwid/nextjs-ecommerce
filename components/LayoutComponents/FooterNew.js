@@ -1,5 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import stoneTypes from "../../data/stoneTypes.json";
+
+const categoryName = ["Necklaces", "Bracelets", "Essential Oils", "Misc"];
 
 function FooterNew() {
   return (
@@ -13,12 +16,23 @@ function FooterNew() {
             </Link>
             <div className="w-dyn-list">
               <div role="list" className="w-dyn-items">
-                <div role="listitem" className="w-dyn-item">
-                  <a href="#" className="footer-link"></a>
-                </div>
-              </div>
-              <div className="w-dyn-empty">
-                <div>No items found.</div>
+                {categoryName.length > 1 ? (
+                  categoryName.map((category, id) => {
+                    return (
+                      <div key={id} role="listitem" className="w-dyn-item">
+                        <Link href={`/category/${category}`}>
+                          <a href="#" className="footer-link">
+                            {category}
+                          </a>
+                        </Link>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -61,12 +75,19 @@ function FooterNew() {
             <h6 className="footer-heading">stone types</h6>
             <div className="w-dyn-list">
               <div role="list" className="stone-grid w-dyn-items">
-                <div role="listitem" className="w-dyn-item">
-                  <a href="#" className="footer-link"></a>
-                </div>
-              </div>
-              <div className="w-dyn-empty">
-                <div>No items found.</div>
+                {stoneTypes.length > 1 ? (
+                  stoneTypes.map((stone, id) => (
+                    <div role="listitem" className="w-dyn-item">
+                      <Link href={stone["Slug"]}>
+                        <a className="footer-link">{stone["Name"]}</a>
+                      </Link>
+                    </div>
+                  ))
+                ) : (
+                  <div className="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
