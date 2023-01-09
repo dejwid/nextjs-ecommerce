@@ -100,7 +100,7 @@ function Navigation() {
               <div role="list" className="w-dyn-items">
                 {stoneTypes.length > 1 ? (
                   stoneTypes.map((stone, id) => (
-                    <Link key={id} href={stone["Slug"]}>
+                    <Link key={id} href={"/stone-types/" + stone["Slug"]}>
                       <div role="listitem" className="w-dyn-item">
                         <a className="dropdown-link w-dropdown-link">
                           {stone["Name"]}

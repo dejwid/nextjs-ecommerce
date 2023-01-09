@@ -1,12 +1,12 @@
 import React from "react";
 import FooterNew from "../components/LayoutComponents/FooterNew";
 import InstagramSection from "../components/LayoutComponents/InstagramSection";
-import Navigation from "../components/Navigation/Navigation";
+import NavStatic from "../components/Navigation/NavStatic";
 
 function About() {
   return (
     <div className="page-wrapper">
-      <Navigation />
+      <NavStatic />
       <div
         id="Hero"
         data-w-id="a62acb44-096d-69cb-90e9-3c87dde935a9"

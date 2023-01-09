@@ -26,17 +26,17 @@ function Article({ article }) {
         <div className="wrapper">
           <div className="header-intro">
             <div className="post-category">
-              <div className="title">Published in {article.Category}</div>
-              <a href="#" className="title link-title"></a>
+              <div className="title">Published in </div>
+              <Link href={`/blog/${article.Category}`}>
+                <a className="title link-title">{article.Category}</a>
+              </Link>
             </div>
             <h1 className="post-page-heading">{article.Name}</h1>
             <div className="divider clear"></div>
           </div>
           <div className="breadcrumbs">
             <Link href="/">
-              <a href="#" className="link-dark">
-                Home
-              </a>
+              <a className="link-dark">Home</a>
             </Link>
             <Image
               src="/images/right.svg"
@@ -45,10 +45,8 @@ function Article({ article }) {
               alt=""
               className="breadcrumbs-divider"
             />
-            <Link href="/">
-              <a href="#" className="link-dark">
-                Blog
-              </a>
+            <Link href="/blog">
+              <a className="link-dark">Blog</a>
             </Link>
             <Image
               src="/images/right.svg"
@@ -57,10 +55,8 @@ function Article({ article }) {
               alt=""
               className="breadcrumbs-divider"
             />
-            <Link href="/">
-              <a href="#" className="link-dark">
-                {article.Name}
-              </a>
+            <Link href={article["Slug"]}>
+              <a className="link-dark">{article.Name}</a>
             </Link>
           </div>
         </div>
@@ -161,9 +157,11 @@ function Article({ article }) {
                       blogPostsArr.map((post, id) => {
                         return (
                           <div key={id} role="listitem" className="w-dyn-item">
-                            <a href="#" className="sidebar-category">
-                              {post["Category"]}
-                            </a>
+                            <Link href={`/blog/${post["Category"]}`}>
+                              <a className="sidebar-category">
+                                {post["Category"]}
+                              </a>
+                            </Link>
                           </div>
                         );
                       })
@@ -251,9 +249,9 @@ function Article({ article }) {
                     />
                     <div className="form-text-small">
                       We never share your info. View our{" "}
-                      <a href="faq.html" className="link-dark">
-                        Privacy Policy
-                      </a>
+                      <Link href="/faq">
+                        <a className="link-dark">Privacy Policy</a>
+                      </Link>
                     </div>
                   </form>
                   <div className="default-message text-left w-form-done">
@@ -357,15 +355,17 @@ function Article({ article }) {
                           <div className="post-card-info">
                             <div className="post-card-category">
                               <div>Published in </div>
-                              <a href="#" className="link-color">
-                                {post["Category"]}
-                              </a>
+                              <Link href={`/blog/category/${post["Category"]}`}>
+                                <a className="link-color">{post["Category"]}</a>
+                              </Link>
                             </div>
-                            <a href="#" className="link-dark w-inline-block">
-                              <h4 className="post-card-heading">
-                                {post["Name"]}
-                              </h4>
-                            </a>
+                            <Link href={`/blog/${post["Slug"]}`}>
+                              <a className="link-dark w-inline-block">
+                                <h4 className="post-card-heading">
+                                  {post["Name"]}
+                                </h4>
+                              </a>
+                            </Link>
                           </div>
                         </div>
                       </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/Image";
 import blogPosts from "../data/blogPosts.json";
-import Navigation from "../components/Navigation/Navigation";
+import NavStatic from "../components/Navigation/NavStatic";
 import InstagramSection from "../components/LayoutComponents/InstagramSection";
 import FooterNew from "../components/LayoutComponents/FooterNew";
 
@@ -34,7 +35,7 @@ function blog(props) {
 
   return (
     <div className="page-wrapepr">
-      <Navigation />
+      <NavStatic />
       <div
         id="Hero"
         data-w-id="3f468f7e-5bbc-0b81-8f27-6307c2e93e86"
@@ -50,12 +51,14 @@ function blog(props) {
             <div className="divider color"></div>
           </div>
           <div className="breadcrumbs">
-            <a href="index.html" className="link-dark">
-              Home
-            </a>
-            <img
-              src="images/right.svg"
+            <Link href="/">
+              <a className="link-dark">Home</a>
+            </Link>
+            <Image
+              src="/images/right.svg"
               alt=""
+              width={10}
+              height={10}
               className="breadcrumbs-divider"
             />
             <div>Blog</div>
@@ -97,13 +100,19 @@ function blog(props) {
                             <div className="post-card-info">
                               <div className="post-card-category">
                                 <div>Published in {post.Category}</div>
-                                <a href="#" className="link-color"></a>
+                                <Link href={`blog/${post["Slug"]}`}>
+                                  <a className="link-color">
+                                    {post["Sub-Category"] || "Nothing Here"}
+                                  </a>
+                                </Link>
                               </div>
-                              <a href="#" className="link-dark w-inline-block">
-                                <h3 className="post-card-heading">
-                                  {post.Name}
-                                </h3>
-                              </a>
+                              <Link href={`blog/${post["Slug"]}`}>
+                                <a className="link-dark w-inline-block">
+                                  <h3 className="post-card-heading">
+                                    {post.Name}
+                                  </h3>
+                                </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -258,9 +267,9 @@ function blog(props) {
                     />
                     <div className="form-text-small">
                       We never share your info. View our{" "}
-                      <a href="faq.html" className="link-dark">
-                        Privacy Policy
-                      </a>
+                      <Link href="/faq">
+                        <a className="link-dark">Privacy Policy</a>
+                      </Link>
                     </div>
                   </form>
                   <div className="default-message text-left w-form-done">
@@ -274,40 +283,42 @@ function blog(props) {
                 </div>
               </div>
               <div className="sidebar-block sticky">
-                <a href="shop.html" className="banner w-inline-block">
-                  <div className="banner-header">
-                    <div className="title small-title">
-                      <span className="text-color">New</span> Arrivals
-                    </div>
-                    <h5>Explore Our Shop</h5>
-                  </div>
-                  <div className="banner-image-wrapper">
-                    <img src="images/5.png" alt="" className="full-width" />
-                    <div
-                      style={{
-                        WebkitTransform:
-                          "translate3d(0, 0, 0) scale3d(0.5, 0.5, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
-                        MozTransform:
-                          "translate3d(0, 0, 0) scale3d(0.5, 0.5, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
-                        MsTransform:
-                          "translate3d(0, 0, 0) scale3d(0.5, 0.5, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
-                        transform:
-                          "translate3d(0, 0, 0) scale3d(0.5, 0.5, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
-                        opacity: "0",
-                      }}
-                      className="button banner-button"
-                    >
-                      <div className="button-icon-wrapper w-clearfix">
-                        <img
-                          src="images/cart.svg"
-                          alt=""
-                          className="button-icon left"
-                        />
+                <Link href="/shop">
+                  <a className="banner w-inline-block">
+                    <div className="banner-header">
+                      <div className="title small-title">
+                        <span className="text-color">New</span> Arrivals
                       </div>
-                      <div>Shop Now</div>
+                      <h5>Explore Our Shop</h5>
                     </div>
-                  </div>
-                </a>
+                    <div className="banner-image-wrapper">
+                      <img src="images/5.png" alt="" className="full-width" />
+                      <div
+                        style={{
+                          WebkitTransform:
+                            "translate3d(0, 0, 0) scale3d(0.5, 0.5, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                          MozTransform:
+                            "translate3d(0, 0, 0) scale3d(0.5, 0.5, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                          MsTransform:
+                            "translate3d(0, 0, 0) scale3d(0.5, 0.5, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                          transform:
+                            "translate3d(0, 0, 0) scale3d(0.5, 0.5, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                          opacity: "0",
+                        }}
+                        className="button banner-button"
+                      >
+                        <div className="button-icon-wrapper w-clearfix">
+                          <img
+                            src="images/cart.svg"
+                            alt=""
+                            className="button-icon left"
+                          />
+                        </div>
+                        <div>Shop Now</div>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

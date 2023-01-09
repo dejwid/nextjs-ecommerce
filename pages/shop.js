@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import FooterNew from "../components/LayoutComponents/FooterNew";
 import InstagramSection from "../components/LayoutComponents/InstagramSection";
-import Navigation from "../components/Navigation/Navigation";
+import NavStatic from "../components/Navigation/NavStatic";
 import products from "../data/products.json";
 import ProductCardHome from "../components/ProductCard/ProductCardHome";
 
@@ -76,7 +76,7 @@ function shop() {
   }
   return (
     <div className="page-wrapper">
-      <Navigation />
+      <NavStatic />
       <div
         id="Hero"
         data-w-id="b30bc5a5-d09c-9b28-a7ad-9ca6aca82bbd"
@@ -91,9 +91,9 @@ function shop() {
             <div className="divider color"></div>
           </div>
           <div className="breadcrumbs">
-            <a href="index.html" className="link-dark">
-              Home
-            </a>
+            <Link href="/">
+              <a className="link-dark">Home</a>
+            </Link>
             <img
               src="images/right.svg"
               alt=""
@@ -125,9 +125,9 @@ function shop() {
                               role="listitem"
                               className="w-dyn-item"
                             >
-                              <a href={category.href} className="sidebar-link">
-                                {category.name}
-                              </a>
+                              <Link href={category.href}>
+                                <a className="sidebar-link">{category.name}</a>
+                              </Link>
                             </div>
                           );
                         })

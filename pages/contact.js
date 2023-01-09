@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import Navigation from "../components/Navigation/Navigation";
+import NavStatic from "../components/Navigation/NavStatic";
 import InstagramSection from "../components/LayoutComponents/InstagramSection";
 import FooterNew from "../components/LayoutComponents/FooterNew";
 
 function contact() {
   return (
     <div className="page-wrapper">
-      <Navigation />
+      <NavStatic />
       <div
         id="Hero"
         data-w-id="e0977dcf-8dbd-d17d-e5c2-816cce8de4e1"
@@ -22,9 +22,9 @@ function contact() {
             <div className="divider color"></div>
           </div>
           <div className="breadcrumbs">
-            <a href="index.html" className="link-dark">
-              Home
-            </a>
+            <Link href="/">
+              <a className="link-dark">Home</a>
+            </Link>
             <img
               src="images/right.svg"
               alt=""

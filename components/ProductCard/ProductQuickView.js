@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function ProductQuickView(props) {
   return (
@@ -110,9 +111,11 @@ function ProductQuickView(props) {
             </div>
           </div>
         </div>
-        <a href="#" className="quick-view-link w-inline-block">
-          <div className="quick-view-link-text">View Product Page</div>
-        </a>
+        <Link href="/product/[id]" as={`/product/${props.product.id}`}>
+          <a className="quick-view-link w-inline-block">
+            <div className="quick-view-link-text">View Product Page</div>
+          </a>
+        </Link>
       </div>
     </div>
   );

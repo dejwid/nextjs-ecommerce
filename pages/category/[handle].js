@@ -111,9 +111,9 @@ function CategoryPage({ category }) {
             <div className="divider color"></div>
           </div>
           <div className="breadcrumbs">
-            <a href="index.html" className="link-dark">
-              Home
-            </a>
+            <Link href="/">
+              <a className="link-dark">Home</a>
+            </Link>
             <img
               src="images/right.svg"
               alt=""

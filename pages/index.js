@@ -5,6 +5,7 @@ import { findAllProducts } from "./api/products";
 import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import Navigation from "../components/Navigation/Navigation";
+import NavStatic from "../components/Navigation/NavStatic";
 import PopUpSubscribe from "../components/LayoutComponents/PopUpSubscribe";
 import Hero from "../components/Hero/Hero";
 import CategoriesHome from "../components/CategoriesHome";
@@ -88,8 +89,9 @@ export default function Home({ products }) {
 
   return (
     <Layout>
-      <Navigation />
-      <PopUpSubscribe />
+      <NavStatic />
+      {/* <Navigation /> */}
+      {/* <PopUpSubscribe /> */}
       <Hero />
       <CategoriesHome data={categories} />
       <BestSellersHome data={groupedProducts} />

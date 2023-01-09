@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
-import Navigation from "../components/Navigation/Navigation";
+import NavStatic from "../components/Navigation/NavStatic";
 import products from "../data/products.json";
 import stoneTypes from "../data/stoneTypes.json";
 import InstagramSection from "../components/LayoutComponents/InstagramSection";
@@ -11,9 +10,6 @@ function stoneType() {
   const [prodList, setProdList] = useState(products.products);
   const [categories, setCategories] = useState([]);
   const [groupedProducts, setgroupedProducts] = useState([]);
-
-  const router = useRouter();
-  const { handle } = router.query;
 
   let productData = prodList;
 
@@ -75,7 +71,7 @@ function stoneType() {
 
   return (
     <div className="page-type">
-      <Navigation />
+      <NavStatic />
       <div
         id="Hero"
         data-w-id="c8084a22-7dd0-1154-15b7-eb387c2594a7"
@@ -91,26 +87,24 @@ function stoneType() {
           </div>
           <div className="breadcrumbs">
             <Link href="/">
-              <a href="#" className="link-dark">
-                Home
-              </a>
+              <a className="link-dark">Home</a>
             </Link>
             <img
               src="images/right.svg"
               alt=""
               className="breadcrumbs-divider"
             />
-            <a href="#" className="link-dark">
-              Blog
-            </a>
+            <Link href="/blog">
+              <a className="link-dark">Blog</a>
+            </Link>
             <img
               src="images/right.svg"
               alt=""
               className="breadcrumbs-divider"
             />
-            <a href="#" className="link-dark">
-              Stone Type
-            </a>
+            <Link href="/stone-type">
+              <a className="link-dark">Stone Type</a>
+            </Link>
           </div>
         </div>
       </div>
@@ -162,9 +156,7 @@ function stoneType() {
               <div className="sidebar-block">
                 <h4 className="sidebar-heading">Product Categories</h4>
                 <Link href="/shop">
-                  <a href="shop.html" className="sidebar-category">
-                    All Products
-                  </a>
+                  <a className="sidebar-category">All Products</a>
                 </Link>
                 <div className="w-dyn-list">
                   <div role="list" className="w-dyn-items">
@@ -249,9 +241,9 @@ function stoneType() {
                     />
                     <div className="form-text-small">
                       We never share your info. View our{" "}
-                      <a href="faq.html" className="link-dark">
-                        Privacy Policy
-                      </a>
+                      <Link href="faq">
+                        <a className="link-dark">Privacy Policy</a>
+                      </Link>
                     </div>
                   </form>
                   <div className="default-message text-left w-form-done">
@@ -265,27 +257,29 @@ function stoneType() {
                 </div>
               </div>
               <div className="sidebar-block sticky">
-                <a href="shop.html" className="banner w-inline-block">
-                  <div className="banner-header">
-                    <div className="title small-title">
-                      <span className="text-color">New</span> Arrivals
-                    </div>
-                    <h5>Explore Our Shop</h5>
-                  </div>
-                  <div className="banner-image-wrapper">
-                    <img src="images/5.png" alt="" className="full-width" />
-                    <div className="button banner-button">
-                      <div className="button-icon-wrapper w-clearfix">
-                        <img
-                          src="images/cart.svg"
-                          alt=""
-                          className="button-icon left"
-                        />
+                <Link href="/shop">
+                  <a className="banner w-inline-block">
+                    <div className="banner-header">
+                      <div className="title small-title">
+                        <span className="text-color">New</span> Arrivals
                       </div>
-                      <div>Shop Now</div>
+                      <h5>Explore Our Shop</h5>
                     </div>
-                  </div>
-                </a>
+                    <div className="banner-image-wrapper">
+                      <img src="images/5.png" alt="" className="full-width" />
+                      <div className="button banner-button">
+                        <div className="button-icon-wrapper w-clearfix">
+                          <img
+                            src="images/cart.svg"
+                            alt=""
+                            className="button-icon left"
+                          />
+                        </div>
+                        <div>Shop Now</div>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -326,9 +320,11 @@ function stoneType() {
               />
               <div className="form-text-small hide">
                 We never share your info. View our{" "}
-                <a href="faq.html" className="link-dark">
-                  Privacy Policy
-                </a>
+                <Link href="faq">
+                  <a href="faq.html" className="link-dark">
+                    Privacy Policy
+                  </a>
+                </Link>
               </div>
             </form>
             <div className="default-message w-form-done">

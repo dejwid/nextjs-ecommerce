@@ -21,9 +21,7 @@ function FooterNew() {
                     return (
                       <div key={id} role="listitem" className="w-dyn-item">
                         <Link href={`/category/${category}`}>
-                          <a href="#" className="footer-link">
-                            {category}
-                          </a>
+                          <a className="footer-link">{category}</a>
                         </Link>
                       </div>
                     );
@@ -39,37 +37,29 @@ function FooterNew() {
           <div className="col footer-col">
             <h6 className="footer-heading">Explore</h6>
             <Link href="/">
-              <a
-                href="index.html"
-                aria-current="page"
-                className="footer-link w--current"
-              >
+              <a aria-current="page" className="footer-link w--current">
                 Home
               </a>
             </Link>
-            <a href="blog.html" className="footer-link hide">
-              Blog
-            </a>
+
             <Link href="/shop">
               <a className="footer-link">Shop</a>
             </Link>
-            <a href="stone-type.html" className="footer-link">
-              Stones
-            </a>
-            <a href="blog.html" className="footer-link">
-              Blog
-            </a>
-            <Link href="/shop">
-              <a href="about.html" className="footer-link">
-                About
-              </a>
+            <Link href="/stone-type">
+              <a className="footer-link">Stones</a>
             </Link>
-            <a href="faq.html" className="footer-link">
-              FAQ
-            </a>
-            <a href="contact.html" className="footer-link">
-              Contact
-            </a>
+            <Link href="/blog">
+              <a className="footer-link">Blog</a>
+            </Link>
+            <Link href="/about">
+              <a className="footer-link">About</a>
+            </Link>
+            <Link href="/faq">
+              <a className="footer-link">FAQ</a>
+            </Link>
+            <Link href="/contact">
+              <a className="footer-link">Contact</a>
+            </Link>
           </div>
           <div className="col footer-col">
             <h6 className="footer-heading">stone types</h6>
