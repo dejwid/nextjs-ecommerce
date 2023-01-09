@@ -1,7 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import stoneTypes from "../../data/stoneTypes";
 
-function Navigation(props) {
+const categoryName = ["Necklaces", "Bracelets", "Essential Oils", "Misc"];
+
+function Navigation() {
   return (
     <div
       data-collapse="medium"
@@ -15,14 +19,11 @@ function Navigation(props) {
     >
       <Link href="/" aria-current="page">
         <a className="nav-brand w-nav-brand w--current">
-          <img
-            src="images/Untitled-design-27.png"
-            loading="lazy"
-            width="138"
-            // sizes="(max-width: 767px) 137.98611450195312px, (max-width: 991px) 18vw, (max-width: 1919px) 7vw, 137.98611450195312px"
-            // srcset="images/Untitled-design-27-p-500.png 500w, images/Untitled-design-27.png 770w"
-            alt=""
-            className="text-logo"
+          <Image
+            src="/images/Untitled-design-27.png"
+            alt="logo"
+            width={138}
+            height={57}
           />
         </a>
       </Link>
@@ -34,7 +35,8 @@ function Navigation(props) {
           data-hover="true"
           data-delay="400"
           data-w-id="85f5f272-d149-bcda-e280-0f2b54233bd0"
-          className="w-dropdown"
+          className="w-dropdown nav-shop-hover"
+          // on hover, the dropdown menu will appear
         >
           <div className="nav-link nav-dropdown grey w-dropdown-toggle">
             <div className="nav-dropdown-icon w-icon-dropdown-toggle"></div>
@@ -48,12 +50,27 @@ function Navigation(props) {
             </Link>
             <div className="w-dyn-list">
               <div role="list" className="w-dyn-items">
-                <div role="listitem" className="w-dyn-item">
-                  <a href="#" className="dropdown-link w-dropdown-link"></a>
-                </div>
-              </div>
-              <div className="w-dyn-empty">
-                <div>No items found.</div>
+                {categoryName.length > 1 ? (
+                  categoryName.map((category, id) => {
+                    return (
+                      <div key={id} role="listitem" className="w-dyn-item">
+                        <a
+                          href={`/category/${category
+                            .toLowerCase()
+                            .split(" ")
+                            .join("-")}`}
+                          className="dropdown-link w-dropdown-link"
+                        >
+                          {category}
+                        </a>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                )}
               </div>
             </div>
           </nav>
@@ -62,7 +79,7 @@ function Navigation(props) {
           data-hover="true"
           data-delay="400"
           data-w-id="d766a0bb-f1ba-03cc-46fb-4ed6434ca3ed"
-          className="w-dropdown"
+          className="w-dropdown nav-shop-hover"
         >
           <div className="nav-link nav-dropdown grey w-dropdown-toggle">
             <div className="nav-dropdown-icon w-icon-dropdown-toggle"></div>
@@ -76,12 +93,21 @@ function Navigation(props) {
             </Link>
             <div className="w-dyn-list">
               <div role="list" className="w-dyn-items">
-                <div role="listitem" className="w-dyn-item">
-                  <a href="#" className="dropdown-link w-dropdown-link"></a>
-                </div>
-              </div>
-              <div className="w-dyn-empty">
-                <div>No items found.</div>
+                {stoneTypes.length > 1 ? (
+                  stoneTypes.map((stone, id) => (
+                    <Link href={stone["Slug"]}>
+                      <div role="listitem" className="w-dyn-item">
+                        <a href="#" className="dropdown-link w-dropdown-link">
+                          {stone["Name"]}
+                        </a>
+                      </div>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="w-dyn-empty">
+                    <div>No items found.</div>
+                  </div>
+                )}
               </div>
             </div>
           </nav>

@@ -7,7 +7,6 @@ export async function findAllProducts() {
 }
 
 export default async function handle(req, res) {
-  // console.log(NewProducts);
   await initMongoose();
   const { ids } = req.query;
   if (ids) {

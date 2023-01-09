@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.w-dropdown.nav-shop-hover > nav {
+  display: none;
+}
+
+.w-dropdown.nav-shop-hover:hover > nav {
+  display: block;
+}
 /* // import all files from /css */
 
 /* // import all files from /css */

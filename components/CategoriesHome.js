@@ -1,8 +1,12 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import img1 from "../public/images/category-essential-oils.jpg";
 import img2 from "../public/images/category-necklaces.jpg";
 import img3 from "../public/images/category-bracelets.png";
 import img4 from "../public/images/category-misc.png";
+
+const categoryName = ["Necklaces", "Bracelets", "Essential Oils", "Misc"];
 
 function CategoriesHome(props) {
   // I SHOULD LOOP OVER THE DATA ONCE AND PUT
@@ -14,7 +18,7 @@ function CategoriesHome(props) {
         <div className="categories-wrapper">
           <div className="categories-intro">
             <div className="categories-icon">
-              <img src="images/arrow-right-circle.svg" alt="" />
+              <img src="/images/arrow-right-circle.svg" alt="" />
             </div>
             <div className="categories-heading">Shop by Category</div>
           </div>
@@ -29,14 +33,19 @@ function CategoriesHome(props) {
                   >
                     <div role="list" className="full-height w-dyn-items">
                       <div role="listitem" className="full-height w-dyn-item">
-                        <a href="#" className="category w-inline-block">
+                        <a
+                          href={category.href}
+                          className="category w-inline-block"
+                        >
                           <div className="button category-button">
                             <div>{category.name}</div>
                             <div className="button-icon-wrapper w-clearfix">
-                              <img
-                                src="images/arrow-right.svg"
+                              <Image
+                                src="/images/arrow-right.svg"
                                 alt=""
                                 className="button-icon right"
+                                width={20}
+                                height={20}
                               />
                             </div>
                           </div>
@@ -66,13 +75,18 @@ function CategoriesHome(props) {
                   >
                     <div role="list" className="full-height w-dyn-items">
                       <div role="listitem" className="full-height w-dyn-item">
-                        <a href="#" className="category w-inline-block">
+                        <a
+                          href={category.href}
+                          className="category w-inline-block"
+                        >
                           <div className="button category-button">
                             <div>{category.name}</div>
                             <div className="button-icon-wrapper w-clearfix">
-                              <img
-                                src="images/arrow-right.svg"
+                              <Image
+                                src={"/images/arrow-right.svg"}
                                 alt=""
+                                width={20}
+                                height={20}
                                 className="button-icon right"
                               />
                             </div>
@@ -103,13 +117,18 @@ function CategoriesHome(props) {
                   >
                     <div role="list" className="full-height w-dyn-items">
                       <div role="listitem" className="full-height w-dyn-item">
-                        <a href="#" className="category w-inline-block">
+                        <a
+                          href={category.href}
+                          className="category w-inline-block"
+                        >
                           <div className="button category-button">
                             <div>{category.name}</div>
                             <div className="button-icon-wrapper w-clearfix">
-                              <img
-                                src="images/arrow-right.svg"
+                              <Image
+                                src={"/images/arrow-right.svg"}
                                 alt=""
+                                width={20}
+                                height={20}
                                 className="button-icon right"
                               />
                             </div>
@@ -140,13 +159,18 @@ function CategoriesHome(props) {
                   >
                     <div role="list" className="full-height w-dyn-items">
                       <div role="listitem" className="full-height w-dyn-item">
-                        <a href="#" className="category w-inline-block">
+                        <a
+                          href={category.href}
+                          className="category w-inline-block"
+                        >
                           <div className="button category-button">
                             <div>{category.name}</div>
                             <div className="button-icon-wrapper w-clearfix">
-                              <img
-                                src="images/arrow-right.svg"
+                              <Image
+                                src="/images/arrow-right.svg"
                                 alt=""
+                                width={20}
+                                height={20}
                                 className="button-icon right"
                               />
                             </div>

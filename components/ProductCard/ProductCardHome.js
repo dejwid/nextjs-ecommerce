@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ProductQuickView from "./ProductQuickView";
 
 function ProductCardHome(props) {
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [card, setCard] = useState([]);
   const [isShown, setIsShown] = useState(false);
-
-  // useEffect(() => {
-  //   console.log(isShown);
-  //   if (props.openModal) {
-  //     setIsShown(true);
-  //   }
-  // }, [props.openModal]);
-  // console.log(props.openModal);
 
   useEffect(() => {
     setCard(props.product);
@@ -33,7 +26,7 @@ function ProductCardHome(props) {
       style={
         props.setWidth && props.setWidth
           ? { width: props.setWidth }
-          : { width: "25%" }
+          : { width: "33%" }
       }
     >
       <div data-w-id={props.product.id} className="product-card">
@@ -45,7 +38,7 @@ function ProductCardHome(props) {
               className="product-card-image-link w-inline-block"
             >
               <img
-                style={{ opacity: 1 }}
+                style={{ opacity: 1, width: "300px", height: "300px" }}
                 src={props.product.image}
                 alt=""
                 className="product-card-image"
