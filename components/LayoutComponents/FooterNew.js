@@ -67,7 +67,7 @@ function FooterNew() {
               <div role="list" className="stone-grid w-dyn-items">
                 {stoneTypes.length > 1 ? (
                   stoneTypes.map((stone, id) => (
-                    <div role="listitem" className="w-dyn-item">
+                    <div key={id} role="listitem" className="w-dyn-item">
                       <Link href={stone["Slug"]}>
                         <a className="footer-link">{stone["Name"]}</a>
                       </Link>

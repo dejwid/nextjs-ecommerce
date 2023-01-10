@@ -185,7 +185,7 @@ function blog(props) {
                     {blogPosts.length > 1 ? (
                       blogPosts.map((post, id) => {
                         return (
-                          <div role="listitem" className="w-dyn-item">
+                          <div key={id} role="listitem" className="w-dyn-item">
                             <a
                               href="#"
                               className="sidebar-featured-post w-inline-block"

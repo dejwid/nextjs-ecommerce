@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FooterNew from "../../components/LayoutComponents/FooterNew";
@@ -8,15 +8,15 @@ import stoneTypes from "../../data/stoneTypes.json";
 import products from "../../data/products.json";
 
 function SingleStoneType({ stoneType }) {
-  const [state, setState] = React.useState({ products: [] });
-  const [prodList, setProdList] = React.useState(products.products);
-  const [categories, setCategories] = React.useState([]);
-  const [groupedProducts, setgroupedProducts] = React.useState([]);
+  const [state, setState] = useState({ products: [] });
+  const [prodList, setProdList] = useState(products.products);
+  const [categories, setCategories] = useState([]);
+  const [groupedProducts, setgroupedProducts] = useState([]);
 
   const router = useRouter();
   const { handle } = router.query;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const products = parseProductString(stoneType["Products"]);
     setState({ products });
   }, [stoneType["Products"]]);
@@ -153,7 +153,7 @@ function SingleStoneType({ stoneType }) {
                   <h4 className="sidebar-heading right">{stoneType["Name"]}</h4>
                   <h4 className="sidebar-heading">Products</h4>
                 </div>
-                <div className="w-dyn-list">
+                {/* <div className="w-dyn-list">
                   <div role="list" className="w-dyn-items">
                     {groupedProducts.length > 1 ? (
                       groupedProducts.map((product) => {
@@ -210,7 +210,7 @@ function SingleStoneType({ stoneType }) {
                       </div>
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
               <div className="sidebar-block">
                 <h4 className="sidebar-heading">More Stone Types</h4>
