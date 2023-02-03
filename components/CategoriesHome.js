@@ -18,7 +18,12 @@ function CategoriesHome(props) {
         <div className="categories-wrapper">
           <div className="categories-intro">
             <div className="categories-icon">
-              <img src="/images/arrow-right-circle.svg" alt="" />
+              <Image
+                src="/images/arrow-right-circle.svg"
+                alt=""
+                width={40}
+                height={40}
+              />
             </div>
             <div className="categories-heading">Shop by Category</div>
           </div>

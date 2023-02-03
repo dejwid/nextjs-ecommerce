@@ -19,7 +19,7 @@ function SingleStoneType({ stoneType }) {
   useEffect(() => {
     const products = parseProductString(stoneType["Products"]);
     setState({ products });
-  }, [stoneType["Products"]]);
+  }, [stoneType]);
 
   function parseProductString(productString) {
     const products = productString.split(";");
@@ -145,7 +145,14 @@ function SingleStoneType({ stoneType }) {
           <div className="blog">
             <div className="blog-posts-wrapper">
               <p>{stoneType["Short-Description"]}</p>
-              <img src={stoneType["Main-Image"]} loading="lazy" alt="" />
+              <Image
+                src={stoneType["Main-Image"]}
+                loading="lazy"
+                alt=""
+                layout="fill"
+                objectFit="cover"
+                // className="image-2"
+              />
             </div>
             <div className="blog-sidebar">
               <div className="sidebar-block">
@@ -269,12 +276,12 @@ function SingleStoneType({ stoneType }) {
                       href="#"
                       className="product-card-image-link w-inline-block"
                     >
-                      <img
+                      {/* <Image
                         style={{ opacity: 1 }}
                         src=""
                         alt=""
                         className="product-card-image"
-                      />
+                      /> */}
                     </a>
                     <div className="badge product-card-sale">Sale</div>
                     <div className="quick-view-wrapper">
@@ -305,9 +312,14 @@ function SingleStoneType({ stoneType }) {
                             href="#"
                             className="close-button w-inline-block"
                           >
-                            <img src="images/x.svg" alt="" />
+                            <Image
+                              src="images/x.svg"
+                              layout="fill"
+                              objectFit="contain"
+                              alt=""
+                            />
                           </a>
-                          <img src="" alt="" className="popup-image" />
+                          {/* <Image src="" alt="" className="popup-image" /> */}
                           <div className="quick-view-info">
                             <div className="product-top-info">
                               <div>SKU: </div>
@@ -348,7 +360,7 @@ function SingleStoneType({ stoneType }) {
                                     aria-haspopup="dialog"
                                     className="w-commerce-commerceaddtocartbutton button add-to-cart-button"
                                   />
-                                  <a
+                                  <button
                                     data-node-type="commerce-buy-now-button"
                                     data-default-text="Buy now"
                                     data-subscription-text="Subscribe now"
@@ -358,7 +370,7 @@ function SingleStoneType({ stoneType }) {
                                     href="checkout.html"
                                   >
                                     Buy now
-                                  </a>
+                                  </button>
                                 </div>
                               </form>
                               <div

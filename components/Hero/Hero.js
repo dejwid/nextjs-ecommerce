@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import SlideOne from "./Slides/SlideOne";
 import SlideThree from "./Slides/SlideThree";
 import SlideTwo from "./Slides/SlideTwo";
@@ -14,7 +15,11 @@ function Hero(props) {
     setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
   };
 
-  const slides = [<SlideOne />, <SlideTwo />, <SlideThree />];
+  const slides = [
+    <SlideOne key={"key"} />,
+    <SlideTwo key={"key"} />,
+    <SlideThree key={"key"} />,
+  ];
   return (
     <div
       data-delay="4000"
@@ -36,15 +41,19 @@ function Hero(props) {
         <div className="slider-arrow-button">
           <a className="slider-arrow-icon-1" onClick={handlePrevClick}>
             {" "}
-            <img
-              src="images/arrow-left.svg"
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/images/arrow-left.svg"
               alt=""
               className="slider-arrow-icon-1"
             />
           </a>
           <a className="slider-arrow-icon-2" onClick={handlePrevClick}>
-            <img
-              src="images/arrow-left-white.svg"
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/images/arrow-left-white.svg"
               alt=""
               className="slider-arrow-icon-2"
             />
@@ -54,15 +63,19 @@ function Hero(props) {
       <div className="slider-arrow-link w-slider-arrow-right">
         <div className="slider-arrow-button">
           <button onClick={handleNextClick} className="slider-arrow-icon-1">
-            <img
-              src="images/arrow-right.svg"
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/images/arrow-right.svg"
               alt=""
               className="slider-arrow-icon-1"
             />
           </button>
           <button onClick={handleNextClick} className="slider-arrow-icon-2">
-            <img
-              src="images/arrow-right-white.svg"
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/images/arrow-right-white.svg"
               alt=""
               className="slider-arrow-icon-2"
             />

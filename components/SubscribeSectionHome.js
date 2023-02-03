@@ -21,7 +21,9 @@ function SubscribeSectionHome(props) {
               // onChange={props.onChange(() => value)}
             >
               <div className="subscribe-input-wrapper">
-                <img src="images/at-sign.svg" alt="" className="input-icon" />
+                <Image 
+                  layout='fill'
+                src="images/at-sign.svg" alt="" className="input-icon" />
                 <input
                   type="email"
                   className="input subscribe-input w-input"

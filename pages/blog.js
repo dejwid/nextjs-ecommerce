@@ -8,15 +8,15 @@ import FooterNew from "../components/LayoutComponents/FooterNew";
 
 function blog(props) {
   //   const data = JSON.parse(blogPosts);
-  const [blogPostsArr, setBlogPostsArr] = useState(blogPosts);
-  const [day, setDay] = useState("");
-  const [monthYear, setMonthYear] = useState("");
+  // const [blogPostsArr, setBlogPostsArr] = useState(blogPosts);
+  // const [day, setDay] = useState("");
+  // const [monthYear, setMonthYear] = useState("");
 
-  useEffect(() => {
-    if (blogPosts.length > 0) {
-      setBlogPostsArr(blogPosts);
-    }
-  }, [blogPosts]);
+  // useEffect(() => {
+  //   if (blogPosts.length > 0) {
+  //     setBlogPostsArr(blogPosts);
+  //   }
+  // }, [blogPosts]);
 
   //   const extractDateInfo = (dateString) => {
   //     const date = new Date(dateString);
@@ -141,7 +141,9 @@ function blog(props) {
                       data-w-id="f9c3e698-97f0-a37f-efdd-36cd46e58457"
                       className="button-icon-wrapper"
                     >
-                      <img
+                      <Image
+                        layout='fill'
+                        objectFit='contain'
                         src="images/arrow-left-white.svg"
                         alt=""
                         className="button-icon left"
@@ -167,7 +169,9 @@ function blog(props) {
                       data-w-id="3d763877-d923-aa07-51aa-835965d8ccbd"
                       className="button-icon-wrapper w-clearfix"
                     >
-                      <img
+                      <Image
+                        layout='fill'
+                        objectFit='contain'
                         src="images/arrow-right-white.svg"
                         alt=""
                         className="button-icon right"
@@ -243,7 +247,9 @@ function blog(props) {
                     className="sidebar-subscribe-form"
                   >
                     <div className="full-width-input-wrapper">
-                      <img
+                      <Image
+                        layout="fill"
+                        objectFit="contain"
                         src="images/at-sign.svg"
                         alt=""
                         className="input-icon"
@@ -292,7 +298,13 @@ function blog(props) {
                       <h5>Explore Our Shop</h5>
                     </div>
                     <div className="banner-image-wrapper">
-                      <img src="images/5.png" alt="" className="full-width" />
+                      <Image
+                        layout="fill"
+                        objectFit="contain"
+                        src="images/5.png"
+                        alt=""
+                        className="full-width"
+                      />
                       <div
                         style={{
                           WebkitTransform:
@@ -308,7 +320,9 @@ function blog(props) {
                         className="button banner-button"
                       >
                         <div className="button-icon-wrapper w-clearfix">
-                          <img
+                          <Image
+                            layout="fill"
+                            objectFit="contain"
                             src="images/cart.svg"
                             alt=""
                             className="button-icon left"

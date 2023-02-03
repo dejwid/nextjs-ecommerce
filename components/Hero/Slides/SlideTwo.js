@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function SlideTwo(props) {
   return (
@@ -31,8 +32,10 @@ function SlideTwo(props) {
                     style={{ width: "0px" }}
                     className="button-icon-wrapper w-clearfix"
                   >
-                    <img
-                      src="images/cart-white.svg"
+                    <Image
+                      layout="fill"
+                      objectFit="contain"
+                      src="/images/cart-white.svg"
                       alt=""
                       className="button-icon left"
                     />

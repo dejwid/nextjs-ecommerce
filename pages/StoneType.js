@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import NavStatic from "../components/Navigation/NavStatic";
 import products from "../data/products.json";
 import stoneTypes from "../data/stoneTypes.json";
 import InstagramSection from "../components/LayoutComponents/InstagramSection";
 import FooterNew from "../components/LayoutComponents/FooterNew";
 
-function stoneType() {
+function StoneType(props) {
   const [prodList, setProdList] = useState(products.products);
   const [categories, setCategories] = useState([]);
   const [groupedProducts, setgroupedProducts] = useState([]);
+
+  useEffect(() => {
+    let categories = [];
+    let groupedProducts = [];
+
+    if (props?.stoneTypes) {
+      setProdList(props.stoneTypes);
+      setgroupedProducts(props.stoneTypes);
+    }
+  }, [props]);
 
   let productData = prodList;
 
@@ -89,7 +100,9 @@ function stoneType() {
             <Link href="/">
               <a className="link-dark">Home</a>
             </Link>
-            <img
+            <Image
+              layout="fill"
+              objectFit="contain"
               src="images/right.svg"
               alt=""
               className="breadcrumbs-divider"
@@ -97,7 +110,9 @@ function stoneType() {
             <Link href="/blog">
               <a className="link-dark">Blog</a>
             </Link>
-            <img
+            <Image
+              layout="fill"
+              objectFit="contain"
               src="images/right.svg"
               alt=""
               className="breadcrumbs-divider"
@@ -217,7 +232,9 @@ function stoneType() {
                     className="sidebar-subscribe-form"
                   >
                     <div className="full-width-input-wrapper">
-                      <img
+                      <Image
+                        layout="fill"
+                        objectFit="contain"
                         src="images/at-sign.svg"
                         alt=""
                         className="input-icon"
@@ -266,10 +283,18 @@ function stoneType() {
                       <h5>Explore Our Shop</h5>
                     </div>
                     <div className="banner-image-wrapper">
-                      <img src="images/5.png" alt="" className="full-width" />
+                      <Image
+                        layout="fill"
+                        objectFit="contain"
+                        src="images/5.png"
+                        alt=""
+                        className="full-width"
+                      />
                       <div className="button banner-button">
                         <div className="button-icon-wrapper w-clearfix">
-                          <img
+                          <Image
+                            layout="fill"
+                            objectFit="contain"
                             src="images/cart.svg"
                             alt=""
                             className="button-icon left"
@@ -292,7 +317,7 @@ function stoneType() {
           </div>
           <h2>Join Our Maling List</h2>
           <div className="full-width w-form">
-            <form
+            {/* <form
               id="wf-form-Subscribe-Form"
               name="wf-form-Subscribe-Form"
               data-name="Subscribe Form"
@@ -300,7 +325,13 @@ function stoneType() {
               className="subscribe-form"
             >
               <div className="subscribe-input-wrapper">
-                <img src="images/at-sign.svg" alt="" className="input-icon" />
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="images/at-sign.svg"
+                  alt=""
+                  className="input-icon"
+                />
                 <input
                   type="email"
                   className="input subscribe-input w-input"
@@ -326,7 +357,7 @@ function stoneType() {
                   </a>
                 </Link>
               </div>
-            </form>
+            </form> */}
             <div className="default-message w-form-done">
               <div>Thank you! Your submission has been received!</div>
             </div>
@@ -342,4 +373,4 @@ function stoneType() {
   );
 }
 
-export default stoneType;
+export default StoneType;

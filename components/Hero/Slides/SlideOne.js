@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 function SlideOne(props) {
@@ -38,8 +39,10 @@ function SlideOne(props) {
                     style={{ width: "0px" }}
                     className="button-icon-wrapper w-clearfix"
                   >
-                    <img
-                      src="images/cart-white.svg"
+                    <Image
+                      layout="fill"
+                      objectFit="contain"
+                      src="/images/cart-white.svg"
                       alt=""
                       className="button-icon left"
                     />

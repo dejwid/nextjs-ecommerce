@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import stoneTypes from "../../data/stoneTypes.json";
+import Image from "next/image";
 
 const categoryName = ["Necklaces", "Bracelets", "Essential Oils", "Misc"];
 
@@ -122,8 +123,10 @@ function FooterNew() {
                 <div>Oops! Something went wrong while submitting the form.</div>
               </div>
             </div>
-            <img
-              src="images/Untitled-design-27.png"
+            <Image
+              width={770}
+              height={770}
+              src="/images/Untitled-design-27.png"
               loading="lazy"
               //   sizes="(max-width: 479px) 87vw, (max-width: 767px) 25vw, (max-width: 1919px) 20vw, 264.01043701171875px"
               //   srcset="images/Untitled-design-27-p-500.png 500w, images/Untitled-design-27.png 770w"
@@ -136,13 +139,13 @@ function FooterNew() {
           <div className="footer-bottom-left">
             <div>
               Website by{" "}
-              <a
+              <Link
                 href="https://www.joewebbdesigns.com/"
                 target="_blank"
                 className="link-dark"
               >
                 Webb Designs
-              </a>
+              </Link>
             </div>
           </div>
         </div>
