@@ -2,20 +2,21 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Breadcrumbs = () => {
+const Breadcrumbs = (props) => {
   return (
     <div className="breadcrumbs">
       <Link href="/">
-        <a className="link-dark">Home</a>
+        <div className="link-dark cursor-pointer">Home</div>
       </Link>
       <Image
-        layout="fill"
-        objectFit="contain"
+        width={18}
+        height={18}
         src="/images/right.svg"
         alt=""
         className="breadcrumbs-divider"
       />
-      <div>Shop</div>
+
+      <div>{props.page}</div>
     </div>
   );
 };
