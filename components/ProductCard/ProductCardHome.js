@@ -38,8 +38,9 @@ function ProductCardHome(props) {
               className="product-card-image-link w-inline-block"
             >
               <img
-                style={{ opacity: 1, width: "300px", height: "300px" }}
-                src={props.product.image}
+                width={300}
+                height={300}
+                src={props?.product?.image}
                 alt=""
                 className="product-card-image"
               />

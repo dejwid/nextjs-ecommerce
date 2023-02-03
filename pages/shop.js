@@ -10,6 +10,9 @@ import ProductCardHome from "../components/ProductCard/ProductCardHome";
 import InnerHero from "../components/Hero/InnerHero";
 import HeaderIntro from "../components/HeaderIntro/HeaderIntro";
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
+import FeaturedBlock from "../components/SideBar/FeaturedBlock";
+import CategoriesBlock from "../components/SideBar/CategoriesBlock";
+import ShopSidebar from "../components/SideBar/ShopSideBar";
 
 function Shop() {
   const [prodList, setProdList] = useState(products.products);
@@ -81,7 +84,7 @@ function Shop() {
   return (
     <div className="page-wrapper">
       <NavStatic />
-      <InnerHero />
+      {/* <InnerHero /> */}
       <div
         id="Hero"
         data-w-id="b30bc5a5-d09c-9b28-a7ad-9ca6aca82bbd"
@@ -95,89 +98,10 @@ function Shop() {
       <div className="section wf-section">
         <div className="wrapper">
           <div className="shop">
-            <div className="shop-sidebar">
-              <div className="sidebar-block">
-                <h4 className="sidebar-block-heading">Categories</h4>
-                <div className="sidebar-links">
-                  <Link href="shop">
-                    <a aria-current="page" className="sidebar-link w--current">
-                      All Products
-                    </a>
-                  </Link>
-                  <div className="w-dyn-list">
-                    <div role="list" className="sidebar-links w-dyn-items">
-                      {categories.length > 1 ? (
-                        categories.map((category, id) => {
-                          return (
-                            <div
-                              key={id}
-                              role="listitem"
-                              className="w-dyn-item"
-                            >
-                              <Link href={category.href}>
-                                <div className="sidebar-link">
-                                  {category.name}
-                                </div>
-                              </Link>
-                            </div>
-                          );
-                        })
-                      ) : (
-                        <div className="w-dyn-empty">
-                          <div>No items found.</div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="sidebar-block featured-block">
-                <h4 className="sidebar-block-heading">Featured</h4>
-                <div className="w-dyn-list">
-                  <div role="list" className="w-dyn-items">
-                    {groupedProducts.length > 1 ? (
-                      groupedProducts.map((product, id) => {
-                        if (product.featuredItem === true) {
-                          return (
-                            <div
-                              key={id}
-                              role="listitem"
-                              className="w-dyn-item"
-                            >
-                              <a
-                                href={product.href}
-                                className="sidebar-product w-inline-block"
-                              >
-                                <Image
-                                  layout="fill"
-                                  objectFit="contain"
-                                  // src={product.image}
-                                  alt=""
-                                  className="sidebar-product-image"
-                                />
-                                <div className="sidebar-product-info">
-                                  <div className="sidebar-product-name">
-                                    {product["Product-Name"]}
-                                  </div>
-                                  <div className="sidebar-product-price">
-                                    <div>{product.price}</div>
-                                    <div className="sidebar-product-old-price"></div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          );
-                        }
-                      })
-                    ) : (
-                      <div className="w-dyn-empty">
-                        <div>No items found.</div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ShopSidebar
+              categories={categories}
+              groupedProducts={groupedProducts}
+            />
             <div className="shop-products w-dyn-list">
               <div
                 role="list"

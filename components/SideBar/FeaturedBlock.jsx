@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "./Image";
+import Image from "next/image";
 
 const FeaturedBlock = ({ groupedProducts }) => {
   return (
