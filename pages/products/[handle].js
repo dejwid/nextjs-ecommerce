@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/Image";
 import { useRouter } from "next/router";
 import products from "../../data/products.json";
 import Navigation from "../../components/Navigation/Navigation";
 import FooterNew from "../../components/LayoutComponents/FooterNew";
 import ProductCardHome from "../../components/ProductCard/ProductCardHome";
+import HeaderIntro from "../../components/HeaderIntro/HeaderIntro";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import AddToCartForm from "../../components/Forms/AddToCartForm";
+import ProductThumbs from "../../components/Product/ProductThumbs";
+import ProductBigImage from "../../components/Product/ProductBigImage";
 
 const ProductPage = ({ product }) => {
   const [prodList, setProdList] = useState(products.products);
@@ -81,25 +87,7 @@ const ProductPage = ({ product }) => {
         className="section page-header wf-section"
       >
         <div className="wrapper empty-header-wrapper">
-          <div className="breadcrumbs">
-            <a href="index.html" className="link-dark">
-              Home
-            </a>
-            <img
-              src="images/right.svg"
-              alt=""
-              className="breadcrumbs-divider"
-            />
-            <a href="shop.html" className="link-dark">
-              Shop
-            </a>
-            <img
-              src="images/right.svg"
-              alt=""
-              className="breadcrumbs-divider"
-            />
-            <div>{product["Product-Name"]}</div>
-          </div>
+          <Breadcrumbs page="products" url="/" />
         </div>
       </div>
       <div className="section wf-section">
@@ -112,111 +100,8 @@ const ProductPage = ({ product }) => {
               data-easing="ease"
               className="product-previews w-tabs"
             >
-              <div className="tabs-thumbs-menu w-tab-menu">
-                <a
-                  data-w-tab="Tab 1"
-                  className="product-thumbs w-inline-block w-tab-link w--current"
-                >
-                  <div className="product-thumb-wrapper">
-                    <img
-                      src={product["Main-Variant-Image"]}
-                      alt=""
-                      className="product-thumb"
-                    />
-                  </div>
-                </a>
-                <a
-                  data-w-tab="Tab 2"
-                  className="product-thumbs w-inline-block w-tab-link"
-                >
-                  <div className="product-thumb-wrapper">
-                    <img src="" alt="" className="product-thumb" />
-                  </div>
-                </a>
-                <a
-                  data-w-tab="Tab 3"
-                  className="product-thumbs w-inline-block w-tab-link"
-                >
-                  <div className="product-thumb-wrapper">
-                    <img src="" alt="" className="product-thumb" />
-                  </div>
-                </a>
-                <a
-                  data-w-tab="Tab 4"
-                  className="product-thumbs w-inline-block w-tab-link"
-                >
-                  <div className="product-thumb-wrapper">
-                    <img src="" alt="" className="product-thumb" />
-                  </div>
-                </a>
-                <a
-                  data-w-tab="Tab 5"
-                  className="product-thumbs w-inline-block w-tab-link"
-                >
-                  <div className="product-thumb-wrapper">
-                    <img src="" alt="" className="product-thumb" />
-                  </div>
-                </a>
-                <a
-                  data-w-tab="Tab 6"
-                  className="product-thumbs w-inline-block w-tab-link"
-                >
-                  <div className="product-thumb-wrapper">
-                    <img src="" alt="" className="product-thumb" />
-                  </div>
-                </a>
-              </div>
-              <div
-                data-w-id="68e7741d-bca5-5b6b-8ae0-814b76734f32"
-                className="product-big-image w-tab-content"
-              >
-                <div
-                  data-w-tab="Tab 1"
-                  data-w-id="68e7741d-bca5-5b6b-8ae0-814b76734f33"
-                  className="product-image-tab w-tab-pane w--tab-active"
-                >
-                  <img
-                    src={product["Main-Variant-Image"]}
-                    alt=""
-                    className="full-width"
-                  />
-                </div>
-                <div
-                  data-w-tab="Tab 2"
-                  data-w-id="68e7741d-bca5-5b6b-8ae0-814b76734f34"
-                  className="product-image-tab w-tab-pane"
-                >
-                  <img src="" alt="" className="full-width" />
-                </div>
-                <div
-                  data-w-tab="Tab 3"
-                  data-w-id="68e7741d-bca5-5b6b-8ae0-814b76734f35"
-                  className="product-image-tab w-tab-pane"
-                >
-                  <img src="" alt="" className="full-width" />
-                </div>
-                <div
-                  data-w-tab="Tab 4"
-                  data-w-id="0d1db96b-6807-d3c4-d07b-7740644c8353"
-                  className="product-image-tab w-tab-pane"
-                >
-                  <img src="" alt="" className="full-width" />
-                </div>
-                <div
-                  data-w-tab="Tab 5"
-                  data-w-id="e8bbb5ab-0430-c24e-6d3e-818f8984f537"
-                  className="product-image-tab w-tab-pane"
-                >
-                  <img src="" alt="" className="full-width" />
-                </div>
-                <div
-                  data-w-tab="Tab 6"
-                  data-w-id="5c5c3e9a-7a09-ccd9-b3df-213b069e773e"
-                  className="product-image-tab w-tab-pane"
-                >
-                  <img src="" alt="" className="full-width" />
-                </div>
-              </div>
+              <ProductThumbs product={product} images={product.image || []} />
+              <ProductBigImage product={product} />
             </div>
             <div className="product-info">
               {/* // product Zoom Code was here */}
@@ -233,47 +118,7 @@ const ProductPage = ({ product }) => {
                 <div className="product-old-price"></div>
               </div>
               <div>
-                <form
-                  data-node-type="commerce-add-to-cart-form"
-                  className="w-commerce-commerceaddtocartform add-to-cart-wrapper"
-                >
-                  <div className="options _w-100 justify-apart">
-                    <div className="option w-clearfix">
-                      <input
-                        type="number"
-                        pattern="^[0-9]+$"
-                        inputMode="numeric"
-                        id="quantity-2be77ef9fd4325e93104e6ec451d9844"
-                        name="commerce-add-to-cart-quantity-input"
-                        min="1"
-                        className="w-commerce-commerceaddtocartquantityinput input quantity-input"
-                        value="1"
-                      />
-                    </div>
-                  </div>
-                  <div className="buy-buttons">
-                    <input
-                      type="submit"
-                      data-node-type="commerce-add-to-cart-button"
-                      data-loading-text="Adding to cart..."
-                      value="Add to Cart"
-                      aria-busy="false"
-                      aria-haspopup="dialog"
-                      className="w-commerce-commerceaddtocartbutton button add-to-cart-button"
-                    />
-                    <a
-                      data-node-type="commerce-buy-now-button"
-                      data-default-text="Buy now"
-                      data-subscription-text="Subscribe now"
-                      aria-busy="false"
-                      aria-haspopup="false"
-                      className="w-commerce-commercebuynowbutton button buy-now-button"
-                      href="checkout.html"
-                    >
-                      Buy now
-                    </a>
-                  </div>
-                </form>
+                <AddToCartForm />
                 <div
                   style={{ display: "none" }}
                   className="w-commerce-commerceaddtocartoutofstock out-of-stock"
@@ -326,13 +171,9 @@ const ProductPage = ({ product }) => {
           </div>
           <div className="flex-center">
             <Link href={`/shop`}>
-              <a
-                href="shop.html"
-                data-w-id="ec60f7dc-9af4-0f54-4a05-cc97f5576fd5"
-                className="button green-shost w-inline-block"
-              >
-                <div>See All Products</div>
-              </a>
+              <div className="button green-shost w-inline-block">
+                See All Products
+              </div>
             </Link>
           </div>
         </div>
